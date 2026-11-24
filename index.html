@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTAC Bridge | Student & Parent Portal</title>
+    <link rel="icon" type="image/png" href="data/logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- ========================================= -->
+    <!-- HEADER / NAVIGATION -->
+    <!-- ========================================= -->
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <!-- LOGO / BRAND -->
+            <a class="brand" href="index.html">
+                <span class="brand-mark">
+                    <img src="data/logo.jpg" alt="HTAC Bridge Logo" class="brand-mark">
+                </span>
+                <span>
+                    <strong>HTAC Bridge</strong>
+                    <small>Student &amp; Parent Portal</small>
+                </span>
+            </a>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button class="menu-toggle"  type="button" onclick="toggleMenu()">
+                ☰
+            </button>
+
+
+	<!-- Navigation -->
+
+        <nav id="mainNav">
+
+            <a class="active" href="index.html">
+                Home
+            </a>
+
+            <a href="announcements.html">
+                Announcements
+            </a>
+
+            <a href="calendar.html">
+                Calendar
+            </a>
+
+            <a href="mission&vision.html">
+                Mission & Vision
+            </a>
+
+            <a href="policies.html">
+                Policies
+            </a>
+
+            <a href="faculty.html">
+                Faculty Members
+            </a>
+
+            <a href="about.html">
+                Research Team
+            </a>
+
+        </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ========================================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ========================================= -->
+
+    <main>
+
+
+        <!-- ========================================= -->
+        <!-- HERO SECTION -->
+        <!-- ========================================= -->
+
+        <section class="hero">
+
+            <div class="container hero-grid">
+
+
+                <!-- HERO TEXT -->
+                <div class="hero-content">
+
+                    <span class="eyebrow">
+                        WELCOME TO HTAC BRIDGE
+                    </span>
+
+                    <h1>
+                        School information,
+                        <br>
+                        <span>all in one place.</span>
+                    </h1>
+
+                    <p>
+                        A centralized online platform helping students
+                        and parents/guardians stay informed about announcements,
+                        activities, policies, schedules,
+                        and important school information.
+                    </p>
+
+
+                    <!-- HERO BUTTONS -->
+                    <div class="hero-actions">
+
+                        <a class="btn btn-primary"
+                           href="announcements.html">
+                            View Announcements
+                        </a>
+
+                        <a class="btn btn-light"
+                           href="calendar.html">
+                            School Calendar
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ========================================= -->
+                <!-- SCHOOL PHOTO SLIDER -->
+                <!-- ========================================= -->
+                <div class="school-slider">
+                    <!-- SLIDE 1 -->
+                    <div class="school-slide active">
+                        <img src="data/school1.jpg" alt="HTAC School">
+                        <div class="school-caption">
+                            <strong>
+                                Our School
+                            </strong>
+                            <span>
+                                Learning, growing, and connecting together.
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 2 -->
+                    <div class="school-slide">
+                        <img src="data/school2.jpg" alt="HTAC School Campus">
+                        <div class="school-caption">
+                            <strong>
+                                Our Campus
+                            </strong>
+                            <span>
+                                A place where students learn and grow.
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 3 -->
+                    <div class="school-slide">
+                        <img src="data/school3.jpg" alt="HTAC School Community">
+                        <div class="school-caption">
+                            <strong>
+                                School Community
+                            </strong>
+                            <span>
+                                Building meaningful connections together.
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- PREVIOUS BUTTON -->
+                    <button class="slider-prev"
+                            type="button"
+                            onclick="changeSlide(-1)"
+                            aria-label="Previous slide">
+                        ‹
+                    </button>
+
+                    <!-- NEXT BUTTON -->
+                    <button class="slider-next"
+                            type="button"
+                            onclick="changeSlide(1)"
+                            aria-label="Next slide">
+                        ›
+                    </button>
+
+
+
+                    <!-- SLIDER DOTS -->
+                    <div class="slider-dots">
+
+                        <span class="slider-dot active"
+                              onclick="showSlide(0)">
+                        </span>
+
+                        <span class="slider-dot"
+                              onclick="showSlide(1)">
+                        </span>
+
+                        <span class="slider-dot"
+                              onclick="showSlide(2)">
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================= -->
+        <!-- QUICK ACCESS SECTION -->
+        <!-- ========================================= -->
+
+        <section class="quick-section">
+
+            <div class="container">
+
+
+                <!-- SECTION HEADING -->
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        QUICK ACCESS
+                    </span>
+
+                    <h2>
+                        What do you need?
+                    </h2>
+
+                </div>
+
+
+
+                <!-- QUICK ACCESS CARDS -->
+                <div class="quick-grid">
+
+
+                    <!-- ANNOUNCEMENTS -->
+                    <a class="quick-card"
+                       href="announcements.html">
+
+                        <span>
+                            📢
+                        </span>
+
+                        <h3>
+                            Announcements
+                        </h3>
+
+                        <p>
+                            Latest school notices and updates.
+                        </p>
+
+                    </a>
+
+
+
+                    <!-- CALENDAR -->
+                    <a class="quick-card"
+                       href="calendar.html">
+
+                        <span>
+                            📅
+                        </span>
+
+                        <h3>
+                            School Calendar
+                        </h3>
+
+                        <p>
+                            Exams, activities, holidays and meetings.
+                        </p>
+
+                    </a>
+
+
+
+                    <!-- STUDENT RESOURCES -->
+                    <a class="quick-card"
+                       href="mission&vision.html">
+
+                        <span>
+                            📚
+                        </span>
+
+                        <h3>
+                            Mision & Vision
+                        </h3>
+
+                        <p>
+                            The guiding principles that shape the community.
+                        </p>
+
+                    </a>
+
+
+
+                    <!-- POLICIES CORNER -->
+                    <a class="quick-card"
+                       href="policies.html">
+
+                        <span>
+                            ⚖️
+                        </span>
+
+                        <h3>
+                            Policies
+                        </h3>
+
+                        <p>
+                            Important school policies, guidelines, and procedures.
+                        </p>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================= -->
+        <!-- ABOUT THE SCHOOL SECTION -->
+        <!-- ========================================= -->
+
+        <section class="content-section">
+
+            <div class="container two-column">
+
+
+                <!-- ABOUT TEXT -->
+                <div>
+
+                    <span class="eyebrow">
+                        ABOUT THE SCHOOL
+                    </span>
+
+                    <h2>
+                        Welcome to our school community
+                    </h2>
+
+                    <p class="lead">
+                        This website serves as a centralized information
+                        platform designed to make important school
+                        information easier for students and parents/guardians
+                        to access.
+                    </p>
+
+                    <p>
+                        Use HTAC Bridge to find announcements, school
+                        schedules, policies, academic
+                        information, parent reminders, and contact
+                        details without having to search through
+                        multiple channels.
+                    </p>
+
+                </div>
+
+
+
+                <!-- IMPORTANT INFORMATION -->
+                <div class="info-panel">
+                    <h3>
+                        Important
+                    </h3>
+                    <p>
+                        For official concerns, records, or urgent matters,
+                        please contact the appropriate school office
+                        directly.
+                    </p>
+
+                    <a class="text-link" href="faculty.html">
+                        Find the right office →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ========================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+
+            <!-- FOOTER BRAND -->
+            <div>
+
+                <strong>
+                    HTAC Bridge
+                </strong>
+
+                <p>
+                    Student &amp; Parent Information Portal
+                </p>
+
+            </div>
+
+
+
+            <!-- COPYRIGHT -->
+            <div>
+
+                <p>
+                    © 2026 HTAC Bridge
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ========================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================================= -->
+
+    <script src="js/shared-data.js"></script>
+</body>
+
+</html>

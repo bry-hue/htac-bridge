@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Announcements | HTAC Bridge</title>
+
+    <link rel="icon" type="image/png" href="data/logo.jpg">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         HEADER / NAVIGATION
+    ========================================================== -->
+
+    <header class="site-header">
+
+        <div class="container nav-wrap">
+
+            <!-- BRAND -->
+            <a class="brand" href="index.html">
+
+                <span class="brand-mark">
+                    <img src="data/logo.jpg" class="brand-mark" alt="HTAC Bridge">
+                </span>
+
+                <span>
+                    <strong>HTAC Bridge</strong>
+                    <small>Student & Parent Portal</small>
+                </span>
+
+            </a>
+
+
+            <!-- MOBILE MENU -->
+            <button class="menu-toggle"
+                    type="button"
+                    onclick="toggleMenu()"
+                    aria-label="Open navigation">
+
+                ☰
+
+            </button>
+
+
+            <!-- NAVIGATION -->
+            <nav id="mainNav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a class="active" href="announcements.html">
+                    Announcements
+                </a>
+
+                <a href="calendar.html">
+                    Calendar
+                </a>
+
+                <a href="mission&vision.html">
+                    Mission & Vision
+                </a>
+
+                <a href="policies.html">
+                    Policies
+                </a>
+
+                <a href="faculty.html">
+                    Faculty Members
+                </a>
+
+                <a href="About.html">
+                    Research Team
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================================
+         MAIN CONTENT
+    ========================================================== -->
+
+    <main>
+
+        <!-- PAGE HERO -->
+        <section class="page-hero">
+
+            <div class="container">
+
+                <span class="eyebrow">
+                    STAY INFORMED
+                </span>
+
+                <h1>
+                    Announcements
+                </h1>
+
+                <p>
+                    Important notices, events, deadlines, and updates
+                    for students and parents.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ANNOUNCEMENTS
+        ====================================================== -->
+
+        <section class="content-section">
+
+            <div class="container">
+
+                <!-- =================================================
+                     ANNOUNCEMENT HEADER
+                ================================================== -->
+
+                <div class="announcement-header">
+
+                    <div>
+                        <span class="announcement-kicker">
+                            SCHOOL UPDATES
+                        </span>
+
+                        <h2>
+                            Latest Announcements
+                        </h2>
+
+                        <p>
+                            Stay updated with the latest school information.
+                        </p>
+                    </div>
+
+
+                    <!--
+                        SMALL HIDDEN-STYLE ADMIN BUTTON
+
+                        This button is intentionally subtle.
+                    -->
+
+                    <button id="adminButton"
+                            class="announcement-admin-button"
+                            type="button"
+                            title="Announcement Management"
+                            aria-label="Announcement Management">
+
+                        ⚙
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     CATEGORY FILTERS
+                ================================================== -->
+
+<!-- =========================================================
+     ANNOUNCEMENT FILTER / SORT TOOLBAR
+========================================================== -->
+
+<div class="announcement-filter-toolbar">
+
+    <!-- MONTH -->
+
+    <div class="announcement-filter-group">
+
+        <label for="announcementMonth">
+            Month
+        </label>
+
+        <select id="announcementMonth">
+            <option value="all">
+                All Months
+            </option>
+
+            <option value="0">January</option>
+            <option value="1">February</option>
+            <option value="2">March</option>
+            <option value="3">April</option>
+            <option value="4">May</option>
+            <option value="5">June</option>
+            <option value="6">July</option>
+            <option value="7">August</option>
+            <option value="8">September</option>
+            <option value="9">October</option>
+            <option value="10">November</option>
+            <option value="11">December</option>
+        </select>
+
+    </div>
+
+
+    <!-- YEAR -->
+
+    <div class="announcement-filter-group">
+
+        <label for="announcementYear">
+            Year
+        </label>
+
+        <select id="announcementYear">
+            <option value="all">
+                All Years
+            </option>
+        </select>
+
+    </div>
+
+
+    <!-- CATEGORY -->
+
+    <div class="announcement-filter-group">
+
+        <label for="announcementCategoryFilter">
+            Category
+        </label>
+
+        <select id="announcementCategoryFilter">
+
+            <option value="All">
+                All Categories
+            </option>
+
+            <option value="Students">
+                Students
+            </option>
+
+            <option value="Parents">
+                Parents
+            </option>
+
+            <option value="Events">
+                Events
+            </option>
+
+            <option value="Deadlines">
+                Deadlines
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- SORT -->
+
+    <div class="announcement-filter-group">
+
+        <label for="announcementSort">
+            Sort
+        </label>
+
+        <select id="announcementSort">
+
+            <option value="date-asc">
+                Date: Upcoming First
+            </option>
+
+            <option value="date-desc">
+                Date: Latest First
+            </option>
+
+            <option value="title-asc">
+                Title: A–Z
+            </option>
+
+            <option value="title-desc">
+                Title: Z–A
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- RESET -->
+
+    <button id="resetAnnouncementFilters"
+            class="announcement-filter-reset"
+            type="button">
+
+        Reset
+
+    </button>
+
+</div>
+
+
+
+                <!-- =================================================
+                     ANNOUNCEMENT COUNT
+                ================================================== -->
+
+                <div class="announcement-summary">
+
+                    <span id="announcementCount">
+                        0 announcements
+                    </span>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ANNOUNCEMENT LIST
+                ================================================== -->
+
+                <div id="announcementList"
+                     class="announcement-list">
+
+                    <!--
+                        Announcements are generated by
+                        announcements.js
+                    -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================================
+         ADMIN LOGIN MODAL
+    ========================================================== -->
+
+    <div id="adminLoginModal"
+         class="announcement-modal"
+         aria-hidden="true">
+
+        <div class="announcement-modal-overlay"></div>
+
+        <div class="announcement-modal-box small-modal">
+
+            <button id="closeAdminLogin"
+                    class="modal-close"
+                    type="button"
+                    aria-label="Close">
+
+                ×
+
+            </button>
+
+            <div class="modal-icon">
+                🔐
+            </div>
+
+            <h2>
+                Announcement Management
+            </h2>
+
+            <p>
+                Enter the administrator PIN to manage announcements.
+            </p>
+
+            <form id="adminLoginForm">
+
+                <div class="form-group">
+
+                    <label for="adminPin">
+                        Admin PIN
+                    </label>
+
+                    <input type="password"
+                           id="adminPin"
+                           maxlength="20"
+                           autocomplete="off"
+                           placeholder="Enter PIN"
+                           required>
+
+                </div>
+
+                <p id="loginError"
+                   class="login-error">
+                </p>
+
+                <button type="submit"
+                        class="primary-button">
+
+                    Unlock Management
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         ADMIN MANAGEMENT MODAL
+    ========================================================== -->
+
+    <div id="adminModal"
+         class="announcement-modal"
+         aria-hidden="true">
+
+        <div class="announcement-modal-overlay"></div>
+
+        <div class="announcement-modal-box">
+
+            <button id="closeAdminModal"
+                    class="modal-close"
+                    type="button"
+                    aria-label="Close">
+
+                ×
+
+            </button>
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="announcement-kicker">
+                        ADMINISTRATION
+                    </span>
+
+                    <h2>
+                        Manage Announcements
+                    </h2>
+
+                    <p>
+                        Add, edit, or remove announcements.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ADMIN ACTION -->
+
+            <div class="admin-toolbar">
+
+                <button id="addAnnouncementButton"
+                        class="primary-button"
+                        type="button">
+
+                    + Add Announcement
+
+                </button>
+
+                <button id="logoutAdminButton"
+                        class="secondary-button"
+                        type="button">
+
+                    Lock
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ADMIN ANNOUNCEMENT LIST -->
+
+            <div id="adminAnnouncementList"
+                 class="admin-announcement-list">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         ADD / EDIT ANNOUNCEMENT MODAL
+    ========================================================== -->
+
+    <div id="announcementFormModal"
+         class="announcement-modal"
+         aria-hidden="true">
+
+        <div class="announcement-modal-overlay"></div>
+
+        <div class="announcement-modal-box">
+
+            <button id="closeAnnouncementForm"
+                    class="modal-close"
+                    type="button"
+                    aria-label="Close">
+
+                ×
+
+            </button>
+
+
+            <div class="modal-header">
+
+                <span class="announcement-kicker">
+                    ANNOUNCEMENT
+                </span>
+
+                <h2 id="announcementFormTitle">
+                    Add Announcement
+                </h2>
+
+                <p>
+                    Fill in the information below.
+                </p>
+
+            </div>
+
+
+
+            <!-- FORM -->
+
+            <form id="announcementForm">
+
+                <input type="hidden"
+                       id="announcementId">
+
+
+                <!-- TITLE -->
+
+                <div class="form-group">
+
+                    <label for="announcementTitle">
+                        Title
+                    </label>
+
+                    <input type="text"
+                           id="announcementTitle"
+                           maxlength="100"
+                           placeholder="e.g. Parent-Teacher Meeting"
+                           required>
+
+                </div>
+
+
+                <!-- DATE -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="announcementDate">
+                            Date
+                        </label>
+
+                        <input type="date"
+                               id="announcementDate"
+                               required>
+
+                    </div>
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="form-group">
+
+                        <label for="announcementCategory">
+                            Category
+                        </label>
+
+                        <select id="announcementCategory"
+                                required>
+
+                            <option value="Students">
+                                Students
+                            </option>
+
+                            <option value="Parents">
+                                Parents
+                            </option>
+
+                            <option value="Events">
+                                Events
+                            </option>
+
+                            <option value="Deadlines">
+                                Deadlines
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label for="announcementText">
+                        Announcement
+                    </label>
+
+                    <textarea id="announcementText"
+                              rows="6"
+                              maxlength="500"
+                              placeholder="Write the announcement details here..."
+                              required></textarea>
+
+                </div>
+
+
+                <!-- FORM BUTTONS -->
+
+                <div class="form-actions">
+
+                    <button type="button"
+                            id="cancelAnnouncementForm"
+                            class="secondary-button">
+
+                        Cancel
+
+                    </button>
+
+                    <button type="submit"
+                            class="primary-button">
+
+                        Save Announcement
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         DELETE CONFIRMATION
+    ========================================================== -->
+
+    <div id="deleteModal"
+         class="announcement-modal"
+         aria-hidden="true">
+
+        <div class="announcement-modal-overlay"></div>
+
+        <div class="announcement-modal-box small-modal">
+
+            <button id="closeDeleteModal"
+                    class="modal-close"
+                    type="button"
+                    aria-label="Close">
+
+                ×
+
+            </button>
+
+            <div class="delete-icon">
+                🗑️
+            </div>
+
+            <h2>
+                Delete Announcement?
+            </h2>
+
+            <p id="deleteMessage">
+                Are you sure you want to delete this announcement?
+            </p>
+
+            <div class="form-actions">
+
+                <button id="cancelDelete"
+                        type="button"
+                        class="secondary-button">
+
+                    Cancel
+
+                </button>
+
+                <button id="confirmDelete"
+                        type="button"
+                        class="danger-button">
+
+                    Delete
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <strong>
+                    HTAC Bridge
+                </strong>
+
+                <p>
+                    Student & Parent Information Portal
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <p>
+                    © 2026 HTAC Bridge
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script src="js/shared-data.js"></script>
+</body>
+
+</html>

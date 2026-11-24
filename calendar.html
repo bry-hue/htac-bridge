@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Calendar | HTAC Bridge</title>
+    <link rel="icon" type="image/png" href="data/logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- ============================= -->
+    <!-- HEADER / NAVIGATION -->
+    <!-- ============================= -->
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <!-- Logo / Brand -->
+            <a class="brand" href="index.html">
+                <span class="brand-mark">
+                    <img src="data/logo.jpg" class="brand-mark" />
+                </span>
+                <span>
+                    <strong>HTAC Bridge</strong>
+                    <small>Student & Parent Portal</small>
+                </span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="menu-toggle" onclick="toggleMenu()">
+                ☰
+            </button>
+
+            <!-- Navigation -->
+            <nav id="mainNav">
+                <a href="index.html">
+                    Home
+                </a>
+                <a href="announcements.html">
+                    Announcements
+                </a>
+                <a class="active" href="calendar.html">
+                    Calendar
+                </a>
+                <a href="mission&vision.html">
+                    Mission & Vision
+                </a>
+                <a href="policies.html">
+                    Policies
+                </a>
+                <a href="faculty.html">
+                    Faculty Members
+                </a>
+                <a href="about.html">
+                    Research Team
+                </a>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <!-- ============================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ============================= -->
+
+    <main>
+        <!-- ============================= -->
+        <!-- PAGE HERO -->
+        <!-- ============================= -->
+        <section class="page-hero">
+            <div class="container">
+                <span class="eyebrow">
+                    PLAN AHEAD
+                </span>
+                <h1>
+                    School Calendar
+                </h1>
+                <p>
+                    Keep track of examinations, activities, holidays,
+                    meetings, and important dates.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============================= -->
+        <!-- CALENDAR SECTION -->
+        <!-- ============================= -->
+        <section class="content-section">
+            <div class="container">
+
+                <!-- Calendar Navigation -->
+                <div class="calendar-toolbar">
+                    <button id="prevMonth">
+                        ←
+                    </button>
+                    <h2 id="monthTitle">
+                    </h2>
+                    <button id="nextMonth">
+                        →
+                    </button>
+                </div>
+
+                <!-- Calendar -->
+                <div id="calendar"
+                     class="calendar">
+                    <!--Calendar days are generated dynamically using calendar.js-->
+                </div>
+
+                <!-- ============================= -->
+                <!-- UPCOMING EVENTS -->
+                <!-- ============================= -->
+                <div class="event-list">
+                    <h2>
+                        Upcoming Events
+                    </h2>
+                    <div id="eventList">
+                        <!--Upcoming events are loaded dynamically using calendar.js-->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <!-- Footer Brand -->
+            <div>
+                <strong>
+                    HTAC Bridge
+                </strong>
+                <p>
+                    Student & Parent Information Portal
+                </p>
+            </div>
+            <!-- Copyright -->
+            <div>
+                <p>
+                    © 2026 HTAC Bridge
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================= -->
+    <script src="js/shared-data.js"></script>
+</body>
+
+</html>
+

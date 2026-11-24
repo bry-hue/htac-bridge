@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Faculty Members | HTAC Bridge</title>
+<link rel="icon" type="image/png" href="data/logo.jpg">
+
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER / NAVIGATION
+========================================================== -->
+
+<header class="site-header">
+
+    <div class="container nav-wrap">
+
+        <!-- BRAND -->
+        <a class="brand" href="index.html">
+
+            <span class="brand-mark">
+
+                <img src="data/logo.jpg"
+                     alt="HTAC Bridge Logo"
+                     class="brand-mark">
+
+            </span>
+
+            <span>
+
+                <strong>HTAC Bridge</strong>
+
+                <small>
+                    Student & Parent Portal
+                </small>
+
+            </span>
+
+        </a>
+
+
+        <!-- MOBILE MENU BUTTON -->
+        <button class="menu-toggle"
+                onclick="toggleMenu()"
+                aria-label="Toggle navigation">
+
+            ☰
+
+        </button>
+
+
+        <!-- NAVIGATION -->
+        <nav id="mainNav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="announcements.html">
+                Announcements
+            </a>
+
+            <a href="calendar.html">
+                Calendar
+            </a>
+
+            <a href="mission&vision.html">
+                Mission & Vision
+            </a>
+
+            <a href="policies.html">
+                Policies
+            </a>
+
+            <a class="active"
+               href="faculty.html">
+                Faculty Members
+            </a>
+
+            <a href="about.html">
+                Research Team
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================== -->
+
+<main>
+
+
+    <!-- =====================================================
+         PAGE HERO
+    ====================================================== -->
+
+    <section class="page-hero">
+
+        <div class="container">
+
+            <span class="eyebrow">
+                OUR SCHOOL
+            </span>
+
+            <h1>
+                Faculty Members
+            </h1>
+
+            <p>
+                Meet the faculty members of HTAC and find
+                their basic information and contact details.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FACULTY DIRECTORY
+    ====================================================== -->
+
+    <section class="content-section faculty-page">
+
+        <div class="container">
+
+
+            <!-- FACULTY HEADING -->
+            <div class="faculty-heading">
+
+                <div>
+
+                    <span class="announcement-kicker">
+                        OUR TEAM
+                    </span>
+
+                    <h2>
+                        Faculty Members
+                    </h2>
+
+                    <p>
+                        Meet our dedicated faculty members and
+                        learn more about their roles and areas
+                        of expertise.
+                    </p>
+
+                </div>
+
+
+                <!-- ADMIN BUTTON -->
+                <div class="faculty-admin-area">
+
+                    <button type="button"
+                            class="admin-button"
+                            id="facultyAdminButton"
+                            title="Faculty Administration"
+                            aria-label="Faculty Administration">
+
+                        🔐 Admin
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ADMIN PANEL
+            ================================================== -->
+
+            <div id="facultyAdminPanel"
+                 class="faculty-admin-panel"
+                 style="display: none;">
+
+                <div class="faculty-admin-header">
+
+                    <div>
+
+                        <strong>
+                            Faculty Management
+                        </strong>
+
+                        <span>
+                            Add, edit, or remove faculty members.
+                        </span>
+
+                    </div>
+
+
+                    <button type="button"
+                            class="primary-button"
+                            id="addFacultyButton">
+
+                        + Add Faculty
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FACULTY LIST
+            ================================================== -->
+
+            <div id="facultyList"
+                 class="faculty-grid">
+
+                <!-- Faculty cards generated by JavaScript -->
+
+            </div>
+
+
+
+            <!-- =================================================
+                 EMPTY STATE
+            ================================================== -->
+
+            <div id="facultyEmptyState"
+                 class="faculty-empty"
+                 style="display: none;">
+
+                <div class="faculty-empty-icon">
+                    👨‍🏫
+                </div>
+
+                <h3>
+                    No faculty members yet
+                </h3>
+
+                <p>
+                    Faculty information will appear here once
+                    it has been added by an administrator.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================================
+     FACULTY MANAGEMENT MODAL
+========================================================== -->
+
+<div id="facultyModal"
+     class="faculty-modal"
+     aria-hidden="true">
+
+
+    <!-- MODAL OVERLAY -->
+    <div class="faculty-modal-overlay"
+         id="facultyModalOverlay">
+    </div>
+
+
+    <!-- MODAL BOX -->
+    <div class="faculty-modal-box">
+
+
+        <!-- MODAL HEADER -->
+        <div class="faculty-modal-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    FACULTY MANAGEMENT
+                </span>
+
+                <h2 id="facultyModalTitle">
+                    Add Faculty Member
+                </h2>
+
+            </div>
+
+
+            <button type="button"
+                    class="faculty-modal-close"
+                    id="closeFacultyModal">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FACULTY FORM
+        ================================================== -->
+
+        <form id="facultyForm">
+
+
+            <!-- HIDDEN FACULTY ID -->
+            <input type="hidden"
+                   id="facultyId">
+
+
+
+            <!-- =================================================
+                 PROFILE PHOTO
+            ================================================== -->
+
+            <div class="faculty-photo-upload">
+
+
+                <!-- PHOTO PREVIEW -->
+                <div class="faculty-photo-preview"
+                     id="facultyPhotoPreview">
+
+                    <span>
+                        👤
+                    </span>
+
+                </div>
+
+
+                <!-- PHOTO INPUT -->
+                <div class="faculty-photo-input">
+
+                    <label for="facultyPhoto">
+                        Profile Picture
+                    </label>
+
+                    <input type="file"
+                           id="facultyPhoto"
+                           accept="image/*">
+
+                    <small>
+                        Recommended: square photo, JPG or PNG.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FULL NAME
+            ================================================== -->
+
+            <div class="faculty-form-group">
+
+                <label for="facultyName">
+
+                    Full Name
+
+                    <span>
+                        *
+                    </span>
+
+                </label>
+
+                <input type="text"
+                       id="facultyName"
+                       placeholder="e.g. Juan Dela Cruz"
+                       required>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 POSITION / DEPARTMENT
+            ================================================== -->
+
+            <div class="faculty-form-row">
+
+
+                <!-- POSITION -->
+                <div class="faculty-form-group">
+
+                    <label for="facultyPosition">
+
+                        Position
+
+                        <span>
+                            *
+                        </span>
+
+                    </label>
+
+                    <input type="text"
+                           id="facultyPosition"
+                           placeholder="e.g. Senior High School Teacher"
+                           required>
+
+                </div>
+
+
+                <!-- DEPARTMENT -->
+                <div class="faculty-form-group">
+
+                    <label for="facultyDepartment">
+                        Department
+                    </label>
+
+                    <input type="text"
+                           id="facultyDepartment"
+                           placeholder="e.g. Mathematics">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 EMAIL / CONTACT NUMBER
+            ================================================== -->
+
+            <div class="faculty-form-row">
+
+
+                <!-- EMAIL -->
+                <div class="faculty-form-group">
+
+                    <label for="facultyEmail">
+                        Email
+                    </label>
+
+                    <input type="email"
+                           id="facultyEmail"
+                           placeholder="teacher@example.com">
+
+                </div>
+
+
+                <!-- PHONE -->
+                <div class="faculty-form-group">
+
+                    <label for="facultyPhone">
+                        Contact Number
+                    </label>
+
+                    <input type="text"
+                           id="facultyPhone"
+                           placeholder="09XX XXX XXXX">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 BASIC INFORMATION
+            ================================================== -->
+
+            <div class="faculty-form-group">
+
+                <label for="facultyInfo">
+                    Basic Information
+                </label>
+
+                <textarea id="facultyInfo"
+                          rows="4"
+                          placeholder="Short introduction, educational background, subjects handled, etc."></textarea>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FORM ACTIONS
+            ================================================== -->
+
+            <div class="faculty-form-actions">
+
+                <button type="button"
+                        class="secondary-button"
+                        id="cancelFacultyButton">
+
+                    Cancel
+
+                </button>
+
+
+                <button type="submit"
+                        class="primary-button">
+
+                    Save Faculty
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     ADMIN PIN MODAL
+========================================================== -->
+
+<div id="facultyPinModal"
+     class="faculty-modal"
+     aria-hidden="true">
+
+
+    <!-- PIN MODAL OVERLAY -->
+    <div class="faculty-modal-overlay"
+         id="facultyPinOverlay">
+    </div>
+
+
+    <!-- PIN MODAL BOX -->
+    <div class="faculty-pin-box">
+
+
+        <!-- LOCK ICON -->
+        <div class="faculty-pin-icon">
+            🔐
+        </div>
+
+
+        <!-- TITLE -->
+        <h2>
+            Administrator Access
+        </h2>
+
+
+        <!-- DESCRIPTION -->
+        <p>
+            Enter the administrator PIN to manage faculty
+            information.
+        </p>
+
+
+        <!-- PIN INPUT -->
+        <input type="password"
+               id="facultyAdminPin"
+               placeholder="Enter PIN"
+               maxlength="20">
+
+
+        <!-- ERROR MESSAGE -->
+        <div id="facultyPinError"
+             class="faculty-pin-error">
+        </div>
+
+
+        <!-- ACTION BUTTONS -->
+        <div class="faculty-form-actions">
+
+            <button type="button"
+                    class="secondary-button"
+                    id="cancelFacultyPin">
+
+                Cancel
+
+            </button>
+
+
+            <button type="button"
+                    class="primary-button"
+                    id="unlockFaculty">
+
+                Unlock
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+        <!-- FOOTER BRAND -->
+        <div>
+
+            <strong>
+                HTAC Bridge
+            </strong>
+
+            <p>
+                Student & Parent Information Portal
+            </p>
+
+        </div>
+
+
+        <!-- COPYRIGHT -->
+        <div>
+
+            <p>
+                © 2026 HTAC Bridge
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================== -->
+
+
+    <script src="js/shared-data.js"></script>
+</body>
+
+</html>

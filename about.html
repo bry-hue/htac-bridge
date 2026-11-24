@@ -1,0 +1,869 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Research Team | HTAC Bridge</title>
+    <link rel="icon" type="image/png" href="data/logo.jpg">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/research-team.css">
+    <style>
+        /* Research Team page admin controls only */
+        .team-admin-toolbar{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin:0 0 22px}
+        .team-admin-panel{display:none;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:20px;margin:0 0 24px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+        .team-admin-panel.is-visible{display:block}
+        .team-admin-panel h3{margin:0 0 8px}
+        .team-admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+        .team-admin-button{border:0;border-radius:8px;padding:10px 15px;cursor:pointer;font-weight:600;background:#1f4f46;color:#fff}
+        .team-admin-button.secondary{background:#e9eef0;color:#243238}
+        .team-admin-button.danger{background:#a83232;color:#fff}
+        .team-card{position:relative}
+        .team-card-admin-actions{display:none;gap:8px;padding:0 18px 18px}
+        body.team-admin-unlocked .team-card-admin-actions{display:flex}
+        .team-card-admin-actions button{border:0;border-radius:7px;padding:7px 12px;cursor:pointer;font-weight:600}
+        .team-card-admin-actions .edit{background:#e9eef0;color:#243238}
+        .team-card-admin-actions .delete{background:#fbe8e8;color:#9b2525}
+        .team-admin-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.58);padding:20px;overflow-y:auto;align-items:center;justify-content:center}
+        .team-admin-modal.is-open{display:flex}
+        .team-admin-dialog{background:#fff;width:min(620px,100%);max-height:92vh;overflow-y:auto;border-radius:14px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+        .team-admin-dialog h3{margin:0 0 18px}
+        .team-admin-field{display:block;margin:0 0 13px}
+        .team-admin-field span{display:block;font-weight:600;margin-bottom:5px}
+        .team-admin-field input,.team-admin-field textarea{box-sizing:border-box;width:100%;padding:10px 12px;border:1px solid #cbd5d9;border-radius:8px;font:inherit}
+        .team-admin-field textarea{min-height:90px;resize:vertical}
+        .team-admin-help{font-size:.88rem;color:#64748b;margin:5px 0 14px}
+        .team-admin-status{margin:10px 0 0;font-size:.92rem;color:#52636a}
+        @media(max-width:600px){.team-admin-toolbar{justify-content:flex-start}.team-admin-dialog{padding:18px}}
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================================================
+         HEADER / NAVIGATION
+    ========================================================== -->
+
+    <header class="site-header">
+
+        <div class="container nav-wrap">
+
+            <a class="brand" href="index.html">
+
+                <span class="brand-mark">
+                    <img src="data/logo.jpg"
+                         alt="HTAC Bridge Logo"
+                         class="brand-mark">
+                </span>
+
+                <span>
+                    <strong>HTAC Bridge</strong>
+                    <small>Student & Parent Portal</small>
+                </span>
+
+            </a>
+
+
+            <button class="menu-toggle"
+                    onclick="toggleMenu()"
+                    type="button"
+                    aria-label="Open navigation menu">
+                ☰
+            </button>
+
+
+            <nav id="mainNav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="announcements.html">
+                    Announcements
+                </a>
+
+                <a href="calendar.html">
+                    Calendar
+                </a>
+
+                <a href="mission&vision.html">
+                    Mission & Vision
+                </a>
+
+                <a href="policies.html">
+                    Policies
+                </a>
+
+                <a href="faculty.html">
+                    Faculty Members
+                </a>
+
+                <a class="active"
+                   href="about.html">
+                    Research Team
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         MAIN CONTENT
+    ========================================================== -->
+
+    <main>
+
+
+        <!-- =====================================================
+             PAGE HERO
+        ====================================================== -->
+
+        <section class="page-hero">
+
+            <div class="container">
+
+                <span class="eyebrow">
+                    ABOUT THE RESEARCH
+                </span>
+
+                <h1>
+                    Research Team
+                </h1>
+
+                <p>
+                    Meet the students behind this research and learn
+                    more about the team and their contributions
+                    to the project.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ABOUT THE TEAM
+        ====================================================== -->
+
+        <section class="content-section research-intro">
+
+            <div class="container">
+
+                <div class="research-intro-card">
+
+                    <span class="research-kicker">
+                        OUR RESEARCH TEAM
+                    </span>
+
+                    <h2>
+                        About the Team
+                    </h2>
+
+                    <p>
+                        We are a team of students who worked together
+                        to develop this research project. Each member
+                        contributed their time, ideas, skills, and
+                        knowledge throughout the different stages
+                        of the study.
+                    </p>
+
+                    <p>
+                        Our goal is to explore how a centralized school
+                        information website can help students and parents
+                        access important school information in a more
+                        convenient, organized, and accessible way.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             RESEARCH TEAM MEMBERS
+        ====================================================== -->
+
+        <section class="content-section team-section">
+
+            <div class="container">
+
+                <div class="team-heading">
+
+                    <div>
+
+                        <span class="announcement-kicker">
+                            MEET THE TEAM
+                        </span>
+
+                        <h2>
+                            Research Team Members
+                        </h2>
+
+                        <p>
+                            Get to know the students behind this
+                            research project.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     TEAM GRID
+                ================================================== -->
+
+                <div class="team-admin-toolbar">
+                    <button type="button" class="team-admin-button secondary" id="teamAdminLoginButton">🔒 Team Admin</button>
+                </div>
+                <div class="team-admin-panel" id="teamAdminPanel" aria-live="polite">
+                    <h3>Research Team Management</h3>
+                    <p>Add, update, or remove research team profiles. Changes are shared through the connected Google Sheet.</p>
+                    <div class="team-admin-actions">
+                        <button type="button" class="team-admin-button" id="teamAddMemberButton">＋ Add Member</button>
+                        <button type="button" class="team-admin-button secondary" id="teamAdminLockButton">Lock Admin</button>
+                    </div>
+                    <p class="team-admin-status" id="teamAdminStatus" role="status"></p>
+                </div>
+                <div class="team-grid" id="researchTeamGrid">
+
+
+                    <!-- =================================================
+                         GWENN
+                    ================================================== -->
+
+                    <article class="team-card">
+
+                        <div class="team-photo">
+
+                            <img src="data/gwenn.jpg"
+                                 alt="Gwenn">
+
+                        </div>
+
+
+                        <div class="team-card-body">
+
+                            <span class="team-role">
+                                Research Member
+                            </span>
+
+                            <h3>
+                                Gwenn
+                            </h3>
+
+                            <p class="team-basic-info">
+                                Grade 12 • Research Team
+                            </p>
+
+                            <p class="team-bio">
+                                Gwenn is one of the members of the
+                                research team who contributed to the
+                                planning and development of the study.
+                                Through teamwork and collaboration,
+                                Gwenn helped the group organize ideas
+                                and complete important research tasks.
+                            </p>
+
+
+                            <div class="team-details">
+
+                                <div>
+
+                                    <strong>
+                                        Role
+                                    </strong>
+
+                                    <span>
+                                        Research Member
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        Contribution
+                                    </strong>
+
+                                    <span>
+                                        Research & Documentation
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="team-card-admin-actions">
+                            <button type="button" class="edit" data-team-edit>Edit</button>
+                            <button type="button" class="delete" data-team-delete>Delete</button>
+                        </div>
+                    </article>
+
+
+                    <!-- =================================================
+                         MARA
+                    ================================================== -->
+
+                    <article class="team-card">
+
+                        <div class="team-photo">
+
+                            <img src="data/mara.jpg"
+                                 alt="Mara">
+
+                        </div>
+
+
+                        <div class="team-card-body">
+
+                            <span class="team-role">
+                                Research Member
+                            </span>
+
+                            <h3>
+                                Mara
+                            </h3>
+
+                            <p class="team-basic-info">
+                                Grade 12 • Research Team
+                            </p>
+
+                            <p class="team-bio">
+                                Mara is a member of the research team
+                                who contributed to gathering information,
+                                organizing research materials, and
+                                helping evaluate the needs of the
+                                intended users of the project.
+                            </p>
+
+
+                            <div class="team-details">
+
+                                <div>
+
+                                    <strong>
+                                        Role
+                                    </strong>
+
+                                    <span>
+                                        Research Member
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        Contribution
+                                    </strong>
+
+                                    <span>
+                                        Data Gathering & Evaluation
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="team-card-admin-actions">
+                            <button type="button" class="edit" data-team-edit>Edit</button>
+                            <button type="button" class="delete" data-team-delete>Delete</button>
+                        </div>
+                    </article>
+
+
+                    <!-- =================================================
+                         ANDREW
+                    ================================================== -->
+
+                    <article class="team-card">
+
+                        <div class="team-photo">
+
+                            <img src="data/andrew.jpg"
+                                 alt="Andrew">
+
+                        </div>
+
+
+                        <div class="team-card-body">
+
+                            <span class="team-role">
+                                Research Member
+                            </span>
+
+                            <h3>
+                                Andrew
+                            </h3>
+
+                            <p class="team-basic-info">
+                                Grade 12 • Research Team
+                            </p>
+
+                            <p class="team-bio">
+                                Andrew is a member of the research team
+                                who contributed to the technical and
+                                development aspects of the project.
+                                Andrew also participated in testing and
+                                improving the website to support the
+                                objectives of the research.
+                            </p>
+
+
+                            <div class="team-details">
+
+                                <div>
+
+                                    <strong>
+                                        Role
+                                    </strong>
+
+                                    <span>
+                                        Research Member
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        Contribution
+                                    </strong>
+
+                                    <span>
+                                        Website Development & Testing
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="team-card-admin-actions">
+                            <button type="button" class="edit" data-team-edit>Edit</button>
+                            <button type="button" class="delete" data-team-delete>Delete</button>
+                        </div>
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ABOUT THE RESEARCH
+        ====================================================== -->
+
+        <section class="content-section research-project-section">
+
+            <div class="container">
+
+                <div class="research-project-card">
+
+                    <div class="research-project-icon">
+                        🔬
+                    </div>
+
+
+                    <div>
+
+                        <span class="research-kicker">
+                            OUR PROJECT
+                        </span>
+
+                        <h2>
+                            About This Research
+                        </h2>
+
+                        <p>
+                            This research explores how a school website
+                            can provide students and parents with easier
+                            access to school announcements, academic
+                            resources, calendars, policies, and other
+                            important information.
+                        </p>
+
+                        <p>
+                            The project aims to demonstrate how digital
+                            information management can improve the
+                            accessibility, organization, and convenience
+                            of school-related information for the
+                            school community.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             RESEARCH FEEDBACK
+        ====================================================== -->
+
+        <section class="content-section research-feedback-section">
+
+            <div class="container">
+
+
+                <!-- =================================================
+                     FEEDBACK HEADING
+                ================================================== -->
+
+                <div class="feedback-heading">
+
+                    <span class="announcement-kicker">
+                        YOUR FEEDBACK
+                    </span>
+
+                    <h2>
+                        Evaluate Our Research
+                    </h2>
+
+                    <p>
+                        We would appreciate your feedback. Rate the
+                        research and share your comments with our team.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     RATING CARD
+                ================================================== -->
+
+                <div class="rating-card">
+
+
+                    <!-- Overall Rating -->
+
+                    <div class="rating-summary">
+
+                        <div class="rating-number"
+                             id="averageRating">
+                            0.0
+                        </div>
+
+
+                        <div>
+
+                            <div class="average-stars"
+                                 id="averageStars">
+                                ☆☆☆☆☆
+                            </div>
+
+                            <span id="ratingCount">
+                                No ratings yet
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="rating-divider"></div>
+
+
+                    <!-- Rating Input -->
+
+                    <div class="rating-input">
+
+                        <h3>
+                            How would you rate our research?
+                        </h3>
+
+                        <p>
+                            Select a rating from 1 to 5 stars.
+                        </p>
+
+
+                        <div class="star-rating"
+                             id="starRating">
+
+                            <button type="button"
+                                    data-rating="1"
+                                    aria-label="1 star">
+                                ★
+                            </button>
+
+                            <button type="button"
+                                    data-rating="2"
+                                    aria-label="2 stars">
+                                ★
+                            </button>
+
+                            <button type="button"
+                                    data-rating="3"
+                                    aria-label="3 stars">
+                                ★
+                            </button>
+
+                            <button type="button"
+                                    data-rating="4"
+                                    aria-label="4 stars">
+                                ★
+                            </button>
+
+                            <button type="button"
+                                    data-rating="5"
+                                    aria-label="5 stars">
+                                ★
+                            </button>
+
+                        </div>
+
+
+                        <span class="rating-message"
+                              id="ratingMessage">
+                            Choose a rating above.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     COMMENTS
+                ================================================== -->
+
+                <div class="comments-card">
+
+
+                    <div class="comments-header">
+
+                        <div>
+
+                            <span class="research-kicker">
+                                COMMENTS
+                            </span>
+
+                            <h2>
+                                Share Your Feedback
+                            </h2>
+
+                            <p>
+                                Tell us what you think about our
+                                research and website.
+                            </p>
+
+                        </div>
+
+
+                        <span class="comment-count"
+                              id="commentCount">
+                            0 comments
+                        </span>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         COMMENT FORM
+                    ================================================== -->
+
+                    <form id="commentForm"
+                          class="comment-form">
+
+
+                        <div class="form-row">
+
+
+                            <!-- Name -->
+
+                            <div class="form-group">
+
+                                <label for="commentName">
+                                    Name
+                                </label>
+
+                                <input type="text"
+                                       id="commentName"
+                                       placeholder="Enter your name"
+                                       maxlength="50"
+                                       required>
+
+                            </div>
+
+
+                            <!-- User Type -->
+
+                            <div class="form-group">
+
+                                <label for="commentRole">
+                                    You are
+                                </label>
+
+                                <select id="commentRole">
+
+                                    <option value="Student">
+                                        Student
+                                    </option>
+
+                                    <option value="Parent">
+                                        Parent
+                                    </option>
+
+                                    <option value="Teacher">
+                                        Teacher
+                                    </option>
+
+                                    <option value="Visitor">
+                                        Visitor
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Comment -->
+
+                        <div class="form-group">
+
+                            <label for="commentText">
+                                Comment
+                            </label>
+
+                            <textarea id="commentText"
+                                      rows="5"
+                                      maxlength="500"
+                                      placeholder="Share your thoughts about our research..."
+                                      required></textarea>
+
+                        </div>
+
+
+                        <!-- Form Footer -->
+
+                        <div class="comment-form-footer">
+
+                            <span>
+                                Maximum 500 characters
+                            </span>
+
+
+                            <button type="submit"
+                                    class="primary-button">
+                                Post Comment
+                            </button>
+
+                        </div>
+
+                    </form>
+
+
+                    <!-- =================================================
+                         COMMENTS LIST
+                    ================================================== -->
+
+                    <div class="comments-list"
+                         id="commentsList">
+
+                        <div class="comments-empty"
+                             id="commentsEmpty">
+
+                            <div class="comments-empty-icon">
+                                💬
+                            </div>
+
+                            <h3>
+                                No comments yet
+                            </h3>
+
+                            <p>
+                                Be the first to share your thoughts
+                                about our research.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+<div class="admin-reset-area">
+    <button
+        type="button"
+        class="admin-reset-button"
+        onclick="resetResearchFeedback()">
+        🔒 Admin Reset
+    </button>
+</div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <strong>
+                    HTAC Bridge
+                </strong>
+
+                <p>
+                    Student & Parent Information Portal
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <p>
+                    © 2026 HTAC Bridge
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script src="js/shared-data.js"></script>
+</body>
+
+</html>
+
